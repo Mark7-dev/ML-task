@@ -18,10 +18,9 @@ def_config = neat.Config(
     config_file,
 )
 
-# Define your actual fitness function here
+
 def calculate_fitness(genome, config):
-    # Replace this with your actual fitness calculation
-    # Ensure it always returns a valid float value
+
     return random.random()
 
 def eval_genomes(genomes, config):
@@ -47,7 +46,7 @@ def run_evolution(config, fitness_threshold, max_generations=1000):
             stagnation_counter += 1
         
         if best_fitness >= fitness_threshold or stagnation_counter >= stagnation_limit:
-            return best_fitness, generation + 1  # +1 because generations are 0-indexed
+            return best_fitness, generation + 1  
 
     return best_fitness, max_generations
 
@@ -67,11 +66,11 @@ for i in range(0, i):
     config.pop_size = (10*i)+10
     y.append(config.pop_size)
     
-    # Measure time to reach peak fitness
+
     time_taken = timeit.timeit(lambda: run_evolution(config, fitness_threshold=0.95), number=1)
     results.append(time_taken)
     
-    # You might want to record the number of generations as well
+ 
     _, num_generations = run_evolution(config, fitness_threshold=0.95)
     generations.append(num_generations)
 
