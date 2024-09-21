@@ -248,7 +248,7 @@ def run_simulation(genomes, config):
     generation_font = pygame.font.SysFont("Arial", 30)
     alive_font = pygame.font.SysFont("Arial", 20)
     mean_font = pygame.font.SysFont("Arial", 20)
-    game_map = pygame.image.load("map.png").convert()  # Convert Speeds Up A Lot
+    game_map = pygame.image.load("map2.png").convert()  # Convert Speeds Up A Lot
 
     global current_generation
     current_generation += 1
@@ -349,7 +349,7 @@ if __name__ == "__main__":
     population.add_reporter(stats)
 
     # Run Simulation For A Maximum of 1000 Generations
-    population.run(run_simulation, 100)
+    population.run(run_simulation, 1000)
 
 
 
